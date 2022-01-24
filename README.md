@@ -4,7 +4,7 @@ This is a script which installs Pwndbg, GEF, and Peda GDB plugins in a single co
 
 Run `install.sh` and then use one of the commands below to launch the corresponding GDB environment:
 
-```
+```sh
 gdb-peda
 gdb-peda-intel
 gdb-peda-arm
@@ -16,16 +16,16 @@ For more information read the relevant blog post:
 
 https://medium.com/bugbountywriteup/pwndbg-gef-peda-one-for-all-and-all-for-one-714d71bf36b8
 
-# Installation
+## Installation
 
-```
-cd ~ && git clone https://github.com/soaringk/gdb-peda-pwndbg-gef.git
-cd ~/gdb-peda-pwndbg-gef
+```sh
+cd ~/tools && git clone https://github.com/soaringk/gdb-peda-pwndbg-gef.git
+cd ~/tools/gdb-peda-pwndbg-gef
 ./install.sh
 ```
 
 ## Update
 
-```
+```sh
 ./update.sh
 ```

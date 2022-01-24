@@ -16,62 +16,62 @@ if [ -f ~/.gdbinit ] || [ -h ~/.gdbinit ]; then
 fi
 
 # download peda and decide whether to overwrite if exists
-if [ -d ~/peda ] || [ -h ~/.peda ]; then
+if [ -d ~/tools/peda ] || [ -h ~/.tools/peda ]; then
     echo "[-] PEDA found"
     read -p "skip download to continue? (enter 'y' or 'n') " skip_peda
 
     if [ $skip_peda = 'n' ]; then
-        rm -rf ~/peda
-        git clone https://github.com/longld/peda.git ~/peda
+        rm -rf ~/tools/peda
+        git clone https://github.com/longld/peda.git ~/tools/peda
     else
         echo "PEDA skipped"
     fi
 else
     echo "[+] Downloading PEDA..."
-    git clone https://github.com/longld/peda.git ~/peda
+    git clone https://github.com/longld/peda.git ~/tools/peda
 fi
 
 # download peda arm
-if [ -d ~/peda-arm ] || [ -h ~/.peda ]; then
+if [ -d ~/tools/peda-arm ] || [ -h ~/.tools/peda ]; then
     echo "[-] PEDA ARM found"
     read -p "skip download to continue? (enter 'y' or 'n') " skip_peda
 
     if [ $skip_peda = 'n' ]; then
-        rm -rf ~/peda-arm
+        rm -rf ~/tools/peda-arm
 	git clone https://github.com/alset0326/peda-arm.git
     else
 	echo "PEDA ARM skipped"
     fi
 else	    
     echo "[+] Downloading PEDA ARM..."
-    git clone https://github.com/alset0326/peda-arm.git ~/peda-arm
+    git clone https://github.com/alset0326/peda-arm.git ~/tools/peda-arm
 fi
 
 # download pwndbg
-if [ -d ~/pwndbg ] || [ -h ~/.pwndbg ]; then
+if [ -d ~/tools/pwndbg ] || [ -h ~/.tools/pwndbg ]; then
     echo "[-] Pwndbg found"
     read -p "skip download to continue? (enter 'y' or 'n') " skip_pwndbg
 
     if [ $skip_pwndbg = 'n' ]; then
-        rm -rf ~/pwndbg
-        git clone https://github.com/pwndbg/pwndbg.git ~/pwndbg
+        rm -rf ~/tools/pwndbg
+        git clone https://github.com/pwndbg/pwndbg.git ~/tools/pwndbg
 
-        cd ~/pwndbg
+        cd ~/tools/pwndbg
         ./setup.sh
     else
         echo "Pwndbg skipped"
     fi
 else
     echo "[+] Downloading Pwndbg..."
-    git clone https://github.com/pwndbg/pwndbg.git ~/pwndbg
+    git clone https://github.com/pwndbg/pwndbg.git ~/tools/pwndbg
 
-    cd ~/pwndbg
+    cd ~/tools/pwndbg
     ./setup.sh
 fi
 
 # download gef
 echo "[+] Downloading GEF..."
-git clone https://github.com/hugsy/gef.git ~/gef
+git clone https://github.com/hugsy/gef.git ~/tools/gef
 
 cd $installer_path
 
